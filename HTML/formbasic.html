@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Details</title>
+  </head>
+  <body>
+    <h1>Course Sign Up Page</h1>
+    <p>Please Note: First Name, Last Name, Password,  and Email are required</p>
+    <form action="block.html" method="get">
+      <label for="userfirstname">First Name :</label>
+      <input id="userfirstname" type="text" name="" placeholder="First Name" required>
+      <label for="userlastname">Last Name: </label>
+      <input id="userlastname"type="text" name="" placeholder="Last Name" required>
+      <p></p>
+      <label for="useremail">Email: </label>
+      <input id="useremail" type="email" name="" placeholder="name@mail.com"required>
+      <label for="userpassword">Password: </label>
+      <input id="userpassword"type="password" name="" value=""required>
+      <p>Are you over the age of 18?</p>
+      <label for="userover">Yes </label>
+      <input id="userover" type="radio" name="age" value="Yes"required>
+      <label for="user"></label>
+      <input id="userunder" type="radio" name="age" value="No" required>
+
+      <p>Select you prefered payment method</p>
+      <select name="payment" required>
+        <option value="2">PayPal</option>
+        <option value="3">Verve</option>
+        <option value="4">E-wallet</option>
+        <option value="6">Credit Card</option>
+      </select>
+
+      <h2>Any Opinons?</h2>
+      <textarea name="texts" rows="8" cols="80"></textarea>
+      <input type="submit" name="" value="Submit">
+
+    </form>
+
+  </body>
+</html>
