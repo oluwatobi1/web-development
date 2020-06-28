@@ -1,5 +1,5 @@
-var player1 = prompt('Player 1: Enter your name:')
-// var player2Name = prompt('Player 2: Enter your name:')
+var player1Name = prompt('Player 1: Enter your name:')
+var player2Name = prompt('Player 2: Enter your name:')
 
 var player1color = 'rgb(12, 24, 247)'
 var player2color = 'rgb(247, 29, 12)'
@@ -13,7 +13,11 @@ var player2color = 'rgb(247, 29, 12)'
 //
 
 // Start with Player One
-$('h4').text(player1+": it is your turn, please pick a column to drop your blue chip.");
+$("h4").text(player1Name + ": Click on a cell to drop your chip")
+
+function horizontalwin() {
+
+}
 
 
 $('.board button').on('click',function(){
