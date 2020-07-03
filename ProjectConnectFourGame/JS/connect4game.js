@@ -17,29 +17,30 @@ table = $('table tr')
 $("h4").text("Welcome " + player1Name + ": Click on a cell to drop your chip")
 
 function checkcellcolor(rowIndex, colIndex) {
-  return table.eq(rowIndex).find('td').eq(colIndex).css('background-color')
+  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color')
 }
 function changeCellColor(rowIndex, colIndex, color) {
-  table.eq(rowIndex).find('td').eq(colIndex).css('background-color', color)
+  table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color', color)
 }
 
 function lastemptycell(colIndex) {
   var last = checkcellcolor(5, colIndex)
   for (var i = 5; i >0; i--) {
     last = checkcellcolor(i, colIndex)
-    if (last = 'rgb(3, 252, 115)') {
+    if (last == 'rgb(3, 252, 152)') {
       return i
     }
     continue;
   }
 }
+
 function win(row, col, currentplayer){
   console.log('GAME WON')
-  $('h5').text('You won starting from' + row +' row' +" to this"+ col + " column")
+  $('h5').text('You won starting from' + row +' row' +" to this "+ col + " column")
 }
 
 function checkmatch(one, two, three, four) {
-  return (one === two && one === three && one === four && one !== 'rgb(3, 252, 115)' && one !== undefined)
+  return (one === two && one === three && one === four && one !== 'rgb(3, 252, 152)' && one !== undefined)
 }
 
 function horizontalwin() {
@@ -48,6 +49,7 @@ function horizontalwin() {
       if (checkmatch(checkcellcolor(row, col), checkcellcolor(row, col+1), checkcellcolor(row, col+2), checkcellcolor(row, col+3), checkcellcolor(row, col+4))){
         win(row, col, currentplayer)
         console.log('horizontal');
+        return true;
       }else {
         continue;
       }
@@ -62,7 +64,7 @@ function verticalwin() {
       if (checkmatch(checkcellcolor(row, col), checkcellcolor(row+1, col), checkcellcolor(row+2, col), checkcellcolor(row+3, col))){
    win(row, col, currentplayer)
    console.log('vertical');
-   return True;
+   return true;
 }else {
   continue;
 }
@@ -75,12 +77,12 @@ function diagonalwin(){
     for (var col = 0; col < 5; col++){
       if (checkmatch(checkcellcolor(row, col), checkcellcolor(row+1, col+1), checkcellcolor(row+2, col+2), checkcellcolor(row+3, col+3))){
    win(row, col, currentplayer)
-   console.log('diagonal win');
-   return True;
-}else if (checkmatch(checkcellcolor(row, col), checkcellcolor(row-1, col), checkcellcolor(row-2, col), checkcellcolor(row-3, col+3))){
+   console.log('positive diagonal win');
+   return true;
+ }else if (checkmatch(checkcellcolor(row, col), checkcellcolor(row-1, col+1), checkcellcolor(row-2, col+2), checkcellcolor(row-3, col+3))){
 win(row, col, currentplayer)
-console.log('diagonal win');
-return True;
+console.log('negative diagonal win');
+return true;
 } else {
   continue;
 }
@@ -96,22 +98,22 @@ var playswitch = 1;
 
 board.on('click', function(){
   var col = $(this).closest('td').index()
-  console.log(col);
+  console.log(col+' row val');
   avail = lastemptycell(col)
-  console.log(avail);
-  changeCellColor(col, avail, currentcolor);
+  console.log(avail+'last col vale');
+  changeCellColor(avail, col, currentcolor);
 
-  if (horizontalwin){
+  if (horizontalwin()){
     $('h4').text(currentplayer + ' has WON!')
     $('h2').text("Reload page to restart")
     $('h4').fadeOut('fast')
     console.log('horizontalwin');
-  }else if (verticalwin){
+  }else if (verticalwin()){
     $('h4').text(currentplayer + ' has WON!')
     $('h2').text("Reload page to restart")
     $('h4').fadeOut('verticalwin')
     console.log('done');
-  }else if (horizontalwin){
+  }else if (diagonalwin()){
     $('h4').text(currentplayer + ' has WON!')
     $('h2').text("Reload page to restart")
     $('h4').fadeOut('fast')
@@ -126,7 +128,7 @@ playswitch = playswitch*-1
     $('h4').text(currentplayer + ' its your turn')
   }else {
     currentplayer = player2Name
-    currentplayer = player2color
+    currentcolor = player2color
     $('h4').text(currentplayer + ' its your turn')
   }
 })
