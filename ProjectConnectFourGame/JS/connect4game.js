@@ -14,7 +14,13 @@ var player2color = 'rgb(247, 29, 12)'
 var board = $('.board button')
 table = $('table tr')
 // Start with Player One
-$("h4").text("Welcome " + player1Name + ": Click on a cell to drop your chip")
+$("h4").text("Welcome " + player1Name + ": Click to begin")
+
+
+
+
+
+
 
 function checkcellcolor(rowIndex, colIndex) {
   return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color')
@@ -36,7 +42,7 @@ function lastemptycell(colIndex) {
 
 function win(row, col, currentplayer){
   console.log('GAME WON')
-  $('h5').text('You won starting from' + row +' row' +" to this "+ col + " column")
+  $('h5').text(currentplayer+' You won starting from' + row +' row' +" to this "+ col + " column")
 }
 
 function checkmatch(one, two, three, four) {
