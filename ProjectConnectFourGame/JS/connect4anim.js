@@ -20,9 +20,9 @@ start.on('click', function() {
   for (var row = 0; row <6 ; row++) {
     for (var col = 0; col < 8; col++) {
       fadeOutAmimation(row, col)
-
     }
   }
+  $('h1').slideToggle(500)
   console.log('clicked');
 }
 )

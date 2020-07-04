@@ -14,7 +14,7 @@ var player2color = 'rgb(247, 29, 12)'
 var board = $('.board button')
 table = $('table tr')
 // Start with Player One
-$("h4").text("Welcome " + player1Name + ": Click to begin")
+$("h4").text("Welcome " + player1Name + ": Click to the button below")
 
 
 
@@ -42,7 +42,7 @@ function lastemptycell(colIndex) {
 
 function win(row, col, currentplayer){
   console.log('GAME WON')
-  $('h5').text(currentplayer+' You won starting from' + row +' row' +" to this "+ col + " column")
+  $('h5').text(currentplayer+' won starting from row ' + row +" to this "+ col + " column")
 }
 
 function checkmatch(one, two, three, four) {
