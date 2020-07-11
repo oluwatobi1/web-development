@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SIGN UP PAGE</title>
+    <link rel="stylesheet" href="{% static "bootstraps/bootstrap.css"%}">
+  </head>
+  <body>
+    <h1>WELCOME TO THE SIGN UP PAGE</h1>
+    <h3>KINDLY FILL OUT THE FORMS BELOW</h3>
+
+    <form class="" method="POST">
+      {{ signup.as_p }}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-success" value="submit">
+    </form>
+
+  </body>
+</html>
