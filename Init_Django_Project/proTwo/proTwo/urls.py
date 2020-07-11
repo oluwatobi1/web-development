@@ -19,6 +19,7 @@ from appTwo import views
 import helpapp
 
 urlpatterns = [
+    path('users/', include('appTwo.urls')),
     path('helppage/', include('helpapp.urls')),
     path('', views.index, name = 'index'),
     path('admin/', admin.site.urls),

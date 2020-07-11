@@ -1,5 +1,5 @@
 import os
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proTwo.setting')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proTwo.settings')
 
 import django
 django.setup()
@@ -9,9 +9,9 @@ django.setup()
 
 import random
 from appTwo.models import User
-from faker import faker
+from faker import Faker
 
-fakegen = faker()
+fakegen = Faker()
 
 def populate(N = 6):
     for entry in range(N):
@@ -24,5 +24,5 @@ def populate(N = 6):
 
 if __name__ == '__main__':
     print("Populating script")
-    populate()
+    populate(25)
     print("Completed!")

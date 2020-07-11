@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Users page</title>
+    <link rel="stylesheet" href="{% static "bootstraps/bootstrap.css"%}">
+  </head>
+  <body>
+    <h1>WELCOME TO THE USERS PAGE</h1>
+    <h2>Here are the lists of users in the database currently</h2>
+
+    <div class="apptwo">
+      {% if user_rec %}
+      <ol>
+        {% for rec in user_rec %}
+        <li>User Info
+          <ul>
+            <li>First name: {{ rec.first_name}}</li>
+            <li>Last Name: {{ rec.last_name }}</li>
+            <li>Email: {{ rec.email }}</li>
+          </ul>
+        </li>
+
+      {% endfor %}
+      </ol>
+
+      {% else %}
+      <p>NO USER DATA FOUND!</p>
+      {% endif %}
+
+    </div>
+
+  </body>
+</html>
