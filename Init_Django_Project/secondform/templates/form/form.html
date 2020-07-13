@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "boot/sty.css"%}">
+    <link rel="stylesheet" href="{% static "boot/bootstrap.css" %}">
+
+    <title>FORM PAGE</title>
+  </head>
+  <body>
+    <h1>FILL OUT THE FORM BELOW</h1>
+    <form class="" method="POST">
+      {{form_html.as_p}}
+      {{secf.as_p}}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-success" value="Submit">
+
+    </form>
+
+  </body>
+</html>

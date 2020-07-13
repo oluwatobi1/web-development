@@ -10,7 +10,8 @@
   <body>
     <h1>WELCOME TO THE USERS PAGE</h1>
     <h2>Here are the lists of users in the database currently</h2>
-
+    <!-- relativer urls -->
+    <a href="{% url 'some:help'%}">link to help</a>
     <div class="apptwo">
       {% if user_rec %}
       <ol>
