@@ -1,13 +1,8 @@
 <!DOCTYPE html>
+{% extends "home/base.html" %}
+{% block body_block %}
 {% load static %}
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Users page</title>
-    <link rel="stylesheet" href="{% static "bootstraps/bootstrap.css"%}">
-  </head>
-  <body>
     <h1>WELCOME TO THE USERS PAGE</h1>
     <h2>Here are the lists of users in the database currently</h2>
     <!-- relativer urls -->
@@ -31,7 +26,4 @@
       <p>NO USER DATA FOUND!</p>
       {% endif %}
 
-    </div>
-
-  </body>
-</html>
+  {% endblock %}

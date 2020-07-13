@@ -1,12 +1,9 @@
 <!DOCTYPE html>
+{% extends 'home/base.html' %}
+{% block body_block %}
 {% load static %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>SIGN UP PAGE</title>
-    <link rel="stylesheet" href="{% static "bootstraps/bootstrap.css"%}">
-  </head>
-  <body>
+
+
     <h1>WELCOME TO THE SIGN UP PAGE</h1>
     <h3>KINDLY FILL OUT THE FORMS BELOW</h3>
 
@@ -16,5 +13,4 @@
       <input type="submit" class="btn btn-success" value="submit">
     </form>
 
-  </body>
-</html>
+{% endblock %}

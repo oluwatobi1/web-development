@@ -1,16 +1,12 @@
 <!DOCTYPE html>
+{% extends "home/base.html" %}
+{% block body_block %}
+
 {% load static %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Home page</title>
-    <link rel="stylesheet" href="{% static "bootstraps/bootstrap.css" %}">
-  </head>
-  <body>
+
     <h1> THIS IS THE NEW HOME PAGE</h1>
 
     {{insert_this}}
       <h3>Go to /users to see the list of user information or click here</h3>
       <a href="{% url 'appTwo:users'%}"> this thing</a>
-  </body>
-</html>
+  {% endblock %}
