@@ -5,7 +5,8 @@ from appTwo import forms
 # Create your views here.
 
 def index(request):
-    my_dict = {'insert_this': "This is inserted from the view.py file"}
+    my_dict = {'insert_this': "This is inserted from the view.py file",
+                'num':45587714}
     return render(request, 'home/homepage.html', context = my_dict)
 
 def users(request):
