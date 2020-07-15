@@ -1,0 +1,25 @@
+{% extends 'passapp/base.html'%}
+{% block body_block %}
+
+{% if register %}
+<div class="">
+  <h1>Thanks for Registering</h1>
+
+  {% else %}
+  <h1>FILL OUT THE REGISTRATION FORM BELOW</h1>
+
+  <form enctype="multipart/form-data" method="POST">
+    {%csrf_token%}
+    {{ form_user.as_p }}
+    <h1> Enter Your profile details here</h1>
+    {{ form_profile.as_p}}
+
+    <input type="submit" class="btn btn-success" value="Register">
+
+  </form>
+
+
+</div>
+{% endif %}
+
+{% endblock %}
