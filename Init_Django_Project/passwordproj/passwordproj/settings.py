@@ -14,8 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATES_DIR = os.path.join(
-BASE_DIR, 'template')
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'template')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
@@ -138,5 +137,8 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
-MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+
+#to be observed what is (login) it pointing to exactly?
+LOGIN_URL = '/PassApp/user_login'

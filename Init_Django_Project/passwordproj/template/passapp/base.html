@@ -21,9 +21,23 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'passapp:register'%}">Register</a>
           </li>
+
+
+          {% if user.is_authenticated %}
+
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'passapp:register'%}">Register</a>
+            <a class="nav-link" href="{% url 'user_logout'%}">Logout</a>
           </li>
+
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'special'%}">Special</a>
+          </li>
+          {%else%}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'passapp:userlogin'%}">Login</a>
+          </li>
+          {% endif %}
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
