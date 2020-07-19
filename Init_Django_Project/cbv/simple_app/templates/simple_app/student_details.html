@@ -1,0 +1,20 @@
+{%extends 'simple_app/simple_app_base.html'%}
+{% block body_block%}
+
+<h1>Welcome to the STUDENTS details page</h1>
+
+<div class="jumbotron">
+  <h2>Name: {{students_detail.student_name}}</h2>
+  <h2>School: {{ students_detail.school}}</h2>
+  <h2>Grade: {{ students_detail.grade_level}}</h2>
+  <h2>Age: {{ students_detail.age}}</h2>
+
+
+
+
+      <a class="btn btn-primary btn-lg" href="{% url 'simple_app:updatestudent' pk=students_detail.pk %}">Update Student</a>
+
+
+</div>
+
+{%endblock%}

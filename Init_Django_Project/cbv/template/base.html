@@ -8,6 +8,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'index' %}">Home</a>
       <a class="navbar-brand" href="{% url 'simple_app:list' %}">Schools</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,19 +16,16 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          
+
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'admin:index'%}">Adimin</span></a>
+            <a class="nav-link" href="{% url 'admin:index'%}">Admin</span></a>
           </li>
       </ul>
     </div>
 
     </nav>
 
-    <br>
-    <button type="button" class="btn btn-primary  ">
-      <a href="{% url 'admin:index'%}" style="color:white"> Admin</a>
-    </button>
+
     <div class="container">
       {% block body_block%}
 

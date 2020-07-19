@@ -1,0 +1,16 @@
+{% extends 'simple_app/simple_app_base.html' %}
+
+{% block body_block %}
+<h3>
+  <ol>
+
+  {%for student in student_list%}
+   <li> <a href="student/{{student.id}}">{{student}}</a></li>
+
+   {%endfor%}
+ </ol>
+ </h3>
+ <h3>Add student</h3>
+ <a class="btn btn-primary btn-lg" href="{% url 'simple_app:createstudent'%}">Student</a> 
+
+{% endblock%}

@@ -3,7 +3,36 @@
 
 <h1>WELCOME TO THE SCHOOLS/STUDENTS HOMEPAGE (CBV)</h1>
 
+
 <h3>INJECTING Context: {{ insert }}</h3>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">For STUDENTS</h5>
+        <p class="card-text">To access the list of students currently available in the database.</p>
+        <div align = "center">
+          <a href="{% url 'simple_app:student_list'%}" class="btn btn-primary">Students</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">For SCHOOLS</h5>
+        <p class="card-text">To access the list of students currently available in the database content.</p>
+        <div align = "center">
+          <a href="{% url 'simple_app:list'%}" class="btn btn-primary">Schools</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {% endblock%}
