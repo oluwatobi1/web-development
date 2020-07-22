@@ -1,4 +1,15 @@
 {%extends 'blog_app/base.html'%}
 {% block body_block%}
+  {% for pst in post%}
+  <div class="post-draft">
+    <p>Created on: {{pst.create_date|date:'d-m-Y'}}</p>
+    <h1>
+      <a href="{% url 'post_detail' pk = pst.pk%}"> {{pst.title}}</a>
+    </h1>
+    <p>{{pst.text|truncatedchars:200}}</p>
+
+  </div>
+
+  {% endfor%}
 
 {% endblock %}
