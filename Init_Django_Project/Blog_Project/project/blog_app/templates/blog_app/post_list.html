@@ -4,13 +4,13 @@
 <div class="centerstage">
   <h1>All Posts</h1>
   {% for post in post_list%}
-  <div class="post">
-    <h3><a href="{% url 'post_detail' pk = post.pk%}"></a>{{post.title}}</h3>
+  <div class="posta">
+    <h3><a href="{% url 'post_detail' pk=post.pk%}"></a>{{post.title}}</h3>
     <div class="date">
       <p>Published on {{post.publish_date|date:"D M Y"}}</p>
 
     </div>
-    <a href="{% url 'post_detail', pk = post.pk%}"> {{post.comment_approve.count }}</a>
+    <a href="{% url 'post_detail' pk=post.pk%}"> {{post.comment_approve.count }}</a>
   </div>
 
 

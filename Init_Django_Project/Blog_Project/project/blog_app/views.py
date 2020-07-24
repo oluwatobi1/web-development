@@ -12,6 +12,10 @@ from .models import Comment, Post
 from .forms import CommentForm, PostForm
 
 # Create your views here.
+
+###########################################
+
+
 class AboutView(TemplateView):
     template_name = 'blog_app/about.html'
 
@@ -49,7 +53,7 @@ class PostDraftListView(LoginRequiredMixin, ListView):
     redirect_field_name = 'blog_app/post_list.html'
 
     def get_queryset(self):
-        return Post.objects.filter(publish_date__isnull = True).order_by('created_date')
+        return Post.objects.filter(publish_date__isnull = True).order_by('create_date')
 ###########################################################
 ###########################################################
 ###########################################################
