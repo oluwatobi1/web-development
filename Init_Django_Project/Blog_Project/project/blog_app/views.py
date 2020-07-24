@@ -63,13 +63,13 @@ class PostDraftListView(LoginRequiredMixin, ListView):
 ###########################################################
 ###########################################################
 
-@login_required
+
 def add_comments_to_post(request, pk):
-    post = get_object_or_404(Post, pk= pk)
+    post = get_object_or_404(Post, pk=pk)
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             comment = form.save(commit = False)
             comment.post = post
             comment.save()
@@ -88,9 +88,9 @@ def post_publish(request, pk):
 
 @login_required
 def comment_approve(request, pk):
-    comment = get_object_or_404(Comment, pk = pk)
+    comment = get_object_or_404(Comment, pk=pk)
     comment.approve()
-    return redirect('post_detail', pk = comment.post.pk)
+    return redirect('post_detail', pk=comment.post.pk)
 
 
 @login_required

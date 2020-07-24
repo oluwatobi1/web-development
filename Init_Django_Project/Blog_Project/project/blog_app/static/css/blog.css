@@ -34,9 +34,17 @@
   right: 0px;
 }
 
+
 .text{
   border: 2px black solid;
 }
+
+.centeritem{
+  text-align: center;
+}
+
+
+
 .loader {
   filter:hue-rotate(0deg);
   color:linear-gradient(45deg,#0f8,#08f);
@@ -73,3 +81,65 @@
   100%{filter:hue-rotate(360deg);}
 
 }
+
+
+
+
+/* for the buttons and links that are animated */
+a{
+    display: inline-block;
+    color: #03e9f4;
+    text-decoration: none;
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+a:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+a:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+a:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+
+
+/* To center an item using css */
+/*
+h3 {
+  text-align: center;
+}
+
+.blue-square-container {
+  text-align: center;
+}
+
+.blue-square {
+  background-color: #0074D9;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.yellow-square {
+  background-color: #FFDC00;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.green-square {
+  background-color: #3D9970;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+} */
