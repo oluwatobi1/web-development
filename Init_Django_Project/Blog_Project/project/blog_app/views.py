@@ -21,6 +21,8 @@ class AboutView(TemplateView):
 
 class PostListView(ListView):
     model = Post
+    context_object_name = "post_list"
+    template_name = 'post_list.html'
 
     def get_queryset(self):
         return Post.objects.filter(publish_date__lte = timezone.now()).order_by("-publish_date")
@@ -49,11 +51,14 @@ class PostDeleteView(LoginRequiredMixin,DeleteView):
 
 class PostDraftListView(LoginRequiredMixin, ListView):
     login_url = "/login/"
+    context_object_name = "post_drafts"
     model = Post
     redirect_field_name = 'blog_app/post_list.html'
+    template_name = 'blog_app/post_draft_list.html'
 
     def get_queryset(self):
         return Post.objects.filter(publish_date__isnull = True).order_by('create_date')
+
 ###########################################################
 ###########################################################
 ###########################################################
@@ -76,8 +81,8 @@ def add_comments_to_post(request, pk):
 
 @login_required
 def post_publish(request, pk):
-    post = get_object_or_404(Post, pk = pk)
-    post.publish
+    post = get_object_or_404(Post, pk=pk)
+    post.publish()
     return redirect('post_detail', pk = pk)
 
 
