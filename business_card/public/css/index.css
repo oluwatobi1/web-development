@@ -39,7 +39,7 @@ h5 {
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 40px 30px;
+    padding: 10px 15px;
 }
 
 .sub-card>p {
@@ -114,6 +114,7 @@ h5 {
 @media screen and (min-width: 768px) {
     .card {
         width: 600px;
+        padding: 40px 30px;
     }
     .main {
         padding: 5rem 0;
