@@ -20,6 +20,27 @@ h5 {
     padding-bottom: 5px;
 }
 
+.rotate {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(-10deg);
+}
+
+.bg-text {
+    color: #f0f2a6;
+    font-size: 4rem;
+    position: absolute;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
 .main {
     width: 100%;
     display: flex;
@@ -128,5 +149,8 @@ h5 {
     }
     .main {
         padding: 5rem 0;
+    }
+    .bg-text {
+        font-size: 7rem;
     }
 }
