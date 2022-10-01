@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    background-color: #f3f3f3;
+    background-image: linear-gradient(45deg, #98407f, #ed693d);
     overflow-y: auto;
 }
 
@@ -35,11 +35,14 @@ h5 {
 .card {
     min-height: 400px;
     width: 90%;
-    background-color: #fff;
-    border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.52);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .sub-card>p {
@@ -53,20 +56,27 @@ h5 {
 
 .sub-card {
     position: relative;
-    background-color: #f3f3f3;
     border-radius: 10px;
     padding: 20px;
+    background: rgba(194, 194, 194, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(17, 17, 17, 0.04);
 }
 
 .director-section-card {
     position: relative;
     display: flex;
     flex-direction: row;
-    background-color: #fff;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
+    background: rgba(214, 255, 183, 0.42);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.6px);
+    -webkit-backdrop-filter: blur(1.6px);
+    border: 1px solid rgba(214, 255, 183, 0.3);
 }
 
 .director-image {
